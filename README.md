@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,18 +12,16 @@
             box-sizing: border-box;
         }
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #fff;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             overflow-x: hidden;
-            width: 100%;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            width: 100%;
         }
         header {
             position: fixed;
@@ -123,7 +121,7 @@
         }
         .services-grid, .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -175,7 +173,7 @@
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -195,9 +193,6 @@
             padding: 2rem;
         }
         @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
             .hamburger {
                 display: flex;
             }
@@ -216,31 +211,7 @@
                 left: 0;
             }
             section {
-                padding: 90px 0 80px 0;
-            }
-            .hero > .container > div > a.btn.btn-secondary.fade-in {
-                margin-left: 0;
-                margin-top: 1rem;
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-grid, .portfolio-grid, .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .card {
-                padding: 2rem;
-            }
-            .card i {
-                font-size: 3rem;
-            }
-            section {
                 padding: 80px 0;
-            }
-            h1 {
-                font-size: clamp(2.5rem, 10vw, 4rem);
             }
         }
         @keyframes fadeInUp {
@@ -336,19 +307,19 @@
             <p>Affordable packages for every need. Custom quotes available.</p>
             <div class="services-grid">
                 <div class="card fade-in">
-                    <h3>💎 Professional Website</h3>
+                    <h3>💎 Custom Websites </h3>
                     <p>Advanced features, custom design, full functionality</p>
-                    <strong>₹35,000 - ₹40,000</strong>
+                    <strong> ₹ 6000 </strong>
                 </div>
                 <div class="card fade-in">
-                    <h3>⭐ Advance Websites </h3>
+                    <h3>⭐ Birthday wish sites </h3>
                     <p>Good quality, responsive, standard features</p>
-                    <strong>₹25,000 - ₹30,000</strong>
+                    <strong> ₹ 3000 </strong>
                 </div>
                 <div class="card fade-in">
                     <h3>🔥 Basic Website</h3>
                     <p>Essential pages, clean design, fast delivery</p>
-                    <strong>Starts at ₹15,000</strong>
+                    <strong>Starts at ₹ 2000 </strong>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
@@ -442,5 +413,4 @@
         });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
-
 
