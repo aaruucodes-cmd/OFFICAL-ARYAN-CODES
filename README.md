@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARYAN CODES - Professional Web Design, Development & Video Editing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Poppins', sans-serif;
+font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #fff;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
@@ -227,6 +227,23 @@
         .fade-in {
             animation: fadeInUp 1s ease forwards;
         }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ff88, #ff00ff);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.4);
+            transition: all 0.3s;
+        }
+        .profile-photo:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -249,7 +266,10 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <h1 class="fade-in">ARYAN CODES</h1>
+    <h1 class="fade-in">ARYAN CODES</h1>
+            <div class="profile-photo fade-in">
+                <span>AC</span>
+            </div>
             <p class="fade-in">Transforming Ideas into Stunning Digital Experiences. Professional Web Design, Custom Website Development & High-Quality Video Editing Services.</p>
             <div>
                 <a href="#contact" class="btn fade-in">Get Started</a>
@@ -281,6 +301,33 @@
         </div>
     </section>
 
+    <section id="pricing">
+        <div class="container">
+            <h2>Transparent Pricing</h2>
+            <p>Affordable packages for every need. Custom quotes available.</p>
+            <div class="services-grid">
+                <div class="card fade-in">
+                    <h3>💎 Professional Website</h3>
+                    <p>Advanced features, custom design, full functionality</p>
+                    <strong>₹35,000 - ₹40,000</strong>
+                </div>
+                <div class="card fade-in">
+                    <h3>⭐ Advance Websites </h3>
+                    <p>Good quality, responsive, standard features</p>
+                    <strong>₹25,000 - ₹30,000</strong>
+                </div>
+                <div class="card fade-in">
+                    <h3>🔥 Basic Website</h3>
+                    <p>Essential pages, clean design, fast delivery</p>
+                    <strong>Starts at ₹15,000</strong>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="btn">Get Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
     <section id="portfolio">
         <div class="container">
             <h2>Portfolio Highlights</h2>
@@ -288,7 +335,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-overlay">
-                        <h3>Hotel Booking Site</h3>
+                        <h3>Hotels Site</h3>
                         <p>Luxury hotel template with booking system</p>
                     </div>
                 </div>
@@ -334,7 +381,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 ARYAN CODES. All rights reserved. | Professional Web & Video Solutions</p>
+            <p>&copy; 2024 ARYAN CODES. All rights reserved. | Professional Web & Video Editing</p>
         </div>
     </footer>
 
@@ -366,5 +413,4 @@
         });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
-</body>
-</html>
+
