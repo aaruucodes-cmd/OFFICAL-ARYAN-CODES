@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,16 +12,18 @@
             box-sizing: border-box;
         }
         body {
-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #fff;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             overflow-x: hidden;
+            width: 100%;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
         header {
             position: fixed;
@@ -121,7 +123,7 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         }
         .services-grid, .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -173,7 +175,7 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -193,6 +195,9 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             padding: 2rem;
         }
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
             .hamburger {
                 display: flex;
             }
@@ -211,7 +216,31 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
                 left: 0;
             }
             section {
+                padding: 90px 0 80px 0;
+            }
+            .hero > .container > div > a.btn.btn-secondary.fade-in {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid, .portfolio-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .card {
+                padding: 2rem;
+            }
+            .card i {
+                font-size: 3rem;
+            }
+            section {
                 padding: 80px 0;
+            }
+            h1 {
+                font-size: clamp(2.5rem, 10vw, 4rem);
             }
         }
         @keyframes fadeInUp {
@@ -413,4 +442,5 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
+
 
