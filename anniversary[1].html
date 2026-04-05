@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Celebration - ARYAN CODES Template</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #fff; 
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        @keyframes gradientShift { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; text-align: center; }
+        h1 { font-size: clamp(3rem, 10vw, 6rem); margin: 2rem 0; text-shadow: 0 0 20px rgba(255,255,255,0.5); animation: glow 2s ease-in-out infinite alternate; }
+        @keyframes glow { from { text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #e73c7e; } to { text-shadow: 0 0 20px #fff, 0 0 30px #23a6d5, 0 0 50px #23d5ab; } }
+        .couple-photo { width: 250px; height: 250px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.3); margin: 2rem auto; box-shadow: 0 0 50px rgba(255,255,255,0.4); animation: float 3s ease-in-out infinite; background: radial-gradient(circle, #ffecd2 0%, #fcb69f 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .timeline { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin: 4rem 0; }
+        .memory { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 20px; max-width: 300px; transition: transform 0.3s; }
+        .memory:hover { transform: scale(1.05); }
+        .music-toggle { position: fixed; top: 20px; right: 20px; background: rgba(255,255,255,0.2); border: none; color: #fff; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-size: 1.1rem; }
+        .whatsapp-share { display: inline-block; margin-top: 2rem; padding: 15px 30px; background: #25D366; color: #fff; text-decoration: none; border-radius: 30px; font-weight: bold; box-shadow: 0 5px 15px rgba(37,211,102,0.4); }
+        footer { margin-top: 4rem; opacity: 0.8; font-size: 0.9rem; }
+        @media (max-width: 768px) { .timeline { flex-direction: column; align-items: center; } .container { padding: 10px; } }
+        @media (max-width: 480px) { h1 { font-size: 2.5rem; } .couple-photo { width: 200px; height: 200px; font-size: 3rem; } }
+    </style>
+</head>
+<body>
+    <button class="music-toggle" onclick="toggleMusic()">🎵 Play Music</button>
+    <div class="container">
+        <h1>Happy Anniversary ❤️</h1>
+        <div class="couple-photo">💑</div>
+        <p style="font-size: 1.5rem; margin-bottom: 3rem;">Celebrating another year of love, laughter, and unforgettable memories together!</p>
+        <div class="timeline">
+            <div class="memory">
+                <h3>Our First Date</h3>
+                <p>That magical evening that started it all...</p>
+            </div>
+            <div class="memory">
+                <h3>Year 1</h3>
+                <p>Building dreams together, hand in hand.</p>
+            </div>
+            <div class="memory">
+                <h3>Today & Forever</h3>
+                <p>Stronger than ever, loving you always 💕</p>
+            </div>
+        </div>
+        <a href="https://wa.me/?text=Happy Anniversary! Check out this beautiful template by ARYAN CODES 💝 https://your-link.com" class="whatsapp-share" target="_blank">Share Love 💝</a>
+    </div>
+    <footer>Template by <a href="../index.html" style="color: #00ff88;">ARYAN CODES</a> | Professional Web Templates</footer>
+
+    <audio id="music" loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLI..." type="audio/wav">
+    </audio>
+    <script>
+        function toggleMusic() { const audio = document.getElementById('music'); audio.play().catch(() => alert('Enable sound in browser settings')); }
+        // Confetti effect on load
+        setTimeout(() => { /* simple CSS confetti */ }, 1000);
+    </script>
+</body>
+</html>
