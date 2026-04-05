@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,16 +12,18 @@
             box-sizing: border-box;
         }
         body {
-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #fff;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             overflow-x: hidden;
+            width: 100%;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
         header {
             position: fixed;
@@ -121,7 +123,7 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         }
         .services-grid, .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -173,7 +175,7 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -193,6 +195,9 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             padding: 2rem;
         }
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
             .hamburger {
                 display: flex;
             }
@@ -211,9 +216,43 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
                 left: 0;
             }
             section {
-                padding: 80px 0;
+                padding: 90px 0 80px 0;
+            }
+            .hero > .container > div > a.btn.btn-secondary.fade-in {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: block;
             }
         }
+
+        @media (max-width: 1024px) {
+            .container { padding: 0 18px; }
+            .services-grid, .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        }
+        @media (max-width: 480px) {
+            .services-grid, .portfolio-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .card {
+                padding: 2rem;
+            }
+            .card i {
+                font-size: 3rem;
+            }
+            section {
+                padding: 80px 0;
+            }
+            h1 {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+        }
+        @media (max-width: 360px) {
+            .container { padding: 0 12px; }
+            section { padding: 70px 0; }
+            .card { padding: 1.5rem; }
+        }
+        .hero { flex-direction: column; min-height: 100vh; }
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -227,6 +266,35 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         .fade-in {
             animation: fadeInUp 1s ease forwards;
         }
+        @keyframes heroStagger {
+            to { opacity: 1; }
+        }
+        body { opacity: 0; animation: fadeIn 2.5s forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        .preloader.hidden { opacity: 0; visibility: hidden; }
+        .logo-spin {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00ff88, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: spin 1.5s linear infinite;
+        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .profile-photo {
             width: 150px;
             height: 150px;
@@ -247,6 +315,9 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     </style>
 </head>
 <body>
+    <div class="preloader" id="preloader">
+        <div class="logo-spin" id="logoSpin">ARYAN CODES</div>
+    </div>
     <header>
         <nav class="container">
             <div class="logo">ARYAN CODES</div>
@@ -264,16 +335,16 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-    <h1 class="fade-in">ARYAN CODES</h1>
-            <div class="profile-photo fade-in">
+<section id="home" class="hero">
+        <div class="container" style="animation: heroStagger 1.5s 0.5s forwards opacity:0;">
+            <h1 style="animation: fadeInUp 1s 0.2s forwards opacity:0;">ARYAN CODES</h1>
+            <div class="profile-photo" style="animation: fadeInUp 1s 0.8s forwards opacity:0;">
                 <span>AC</span>
             </div>
-            <p class="fade-in">Transforming Ideas into Stunning Digital Experiences. Professional Web Design, Custom Website Development & High-Quality Video Editing Services.</p>
-            <div>
-                <a href="#contact" class="btn fade-in">Get Started</a>
-                <a href="https://wa.me/917772075898" class="btn btn-secondary fade-in" style="margin-left: 1rem;">WhatsApp Now</a>
+            <p style="animation: fadeInUp 1s 1.2s forwards opacity:0;">Transforming Ideas into Stunning Digital Experiences. Professional Web Design, Custom Website Development & High-Quality Video Editing Services.</p>
+            <div style="animation: fadeInUp 1s 1.6s forwards opacity:0;">
+                <a href="#contact" class="btn">Get Started</a>
+                <a href="https://wa.me/917772075898" class="btn btn-secondary" style="margin-left: 1rem;">WhatsApp Now</a>
             </div>
         </div>
     </section>
@@ -307,19 +378,19 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             <p>Affordable packages for every need. Custom quotes available.</p>
             <div class="services-grid">
                 <div class="card fade-in">
-                    <h3>💎 Custom Websites </h3>
+                    <h3>💎 Professional Website</h3>
                     <p>Advanced features, custom design, full functionality</p>
-                    <strong> ₹ 6000 </strong>
+                    <strong>₹10000</strong>
                 </div>
                 <div class="card fade-in">
-                    <h3>⭐ Birthday wish sites </h3>
+                    <h3>⭐ Custom Websites </h3>
                     <p>Good quality, responsive, standard features</p>
-                    <strong> ₹ 3000 </strong>
+                    <strong>₹4000</strong>
                 </div>
                 <div class="card fade-in">
                     <h3>🔥 Basic Website</h3>
                     <p>Essential pages, clean design, fast delivery</p>
-                    <strong>Starts at ₹ 2000 </strong>
+                    <strong>Starts at ₹2000</strong>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
@@ -333,6 +404,24 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             <h2>Portfolio Highlights</h2>
             <p>Some of our recent projects showcasing modern design & functionality.</p>
             <div class="portfolio-grid">
+                <div class="portfolio-item fade-in" onclick="window.open('templates/anniversary.html','_blank')" style="cursor:pointer;background: linear-gradient(45deg, #ee7752, #e73c7e);">
+                    <div class="portfolio-overlay">
+                        <h3>Anniversary Template</h3>
+                        <p>Romantic celebration with timeline & music</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in" onclick="window.open('templates/birthday-festival.html','_blank')" style="cursor:pointer;background: linear-gradient(45deg, #f093fb, #fa709a);">
+                    <div class="portfolio-overlay">
+                        <h3>Birthday/Festival</h3>
+                        <p>Diwali Holi wishes with fireworks & customizer</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in" onclick="window.open('templates/love-proposal.html','_blank')" style="cursor:pointer;background: linear-gradient(45deg, #667eea, #764ba2);">
+                    <div class="portfolio-overlay">
+                        <h3>Love Proposal</h3>
+                        <p>Interactive proposal with confetti & typing</p>
+                    </div>
+                </div>
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-overlay">
                         <h3>Hotels Site</h3>
@@ -381,7 +470,7 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 ARYAN CODES. All rights reserved. | Professional Web & Video Editing</p>
+            <p>&copy; 2025 ARYAN CODES. All rights reserved. | Professional Web & Video Editing</p>
         </div>
     </footer>
 
@@ -403,6 +492,16 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             navLinks.classList.toggle('active');
         });
 
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+                document.body.style.opacity = '1';
+            }, 2000);
+        });
+
+        // Portfolio click handlers already inline
+
         // Fade in on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -411,6 +510,7 @@ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
                 }
             });
         });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in:not(#home *)').forEach(el => observer.observe(el));
     </script>
+
 
