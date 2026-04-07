@@ -1,229 +1,353 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARYAN CODES - Professional Web Templates | Flash Sale</title>
+    <title>ARYAN CODES | Cyber-Luxury Sale</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { height: 100%; overflow-x: hidden; }
-        body { font-family: system-ui, sans-serif; line-height: 1.6; color: #fff; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(12px, 4vw, 24px); width: 100%; }
-        /* Preloader Start Animation */
-        .preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0a0a0a, #1a1a2e); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: all .8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .preloader.hidden { opacity: 0; transform: scale(0.95); visibility: hidden; }
-        .logo-spin { font-size: clamp(3rem, 12vw, 7rem); font-weight: 900; background: linear-gradient(45deg, #00ff88, #ff00ff, #00ff88); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: spinGlow 2s linear infinite; }
-        @keyframes spinGlow { 0% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 20px #00ff88); } 50% { filter: drop-shadow(0 0 40px #ff00ff); } 100% { transform: rotate(360deg) scale(1); filter: drop-shadow(0 0 20px #00ff88); } }
-        .load-bar { width: 200px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; margin-top: 2rem; }
-        .load-progress { height: 100%; background: linear-gradient(90deg, #00ff88, #ff00ff); border-radius: 2px; width: 0%; animation: load 2s ease-out forwards; }
-        @keyframes load { to { width: 100%; } }
-        /* Sale Banner */
-        .sale-live { position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(90deg, #ff1744, #ff5722); color: #fff; text-align: center; padding: clamp(1rem, 3vw, 1.2rem); font-weight: 800; z-index: 1000; animation: slideDown 0.5s ease-out; box-shadow: 0 4px 20px rgba(255,23,68,0.4); }
-        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
-        .countdown { font-size: clamp(1.2rem, 4vw, 1.6rem); margin-top: 0.5rem; }
-        .countdown span { background: rgba(0,0,0,0.8); padding: 0.5rem 1rem; border-radius: 20px; margin: 0 0.25rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        /* Header */
-        header { position: fixed; top: 0; width: 100%; background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); z-index: 999; padding: clamp(1rem, 2.5vw, 1.4rem) 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: clamp(1.7rem, 5vw, 2.2rem); font-weight: 800; background: linear-gradient(45deg, #00ff88, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: #fff; text-decoration: none; font-weight: 600; position: relative; transition: color 0.3s; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #00ff88; transition: width 0.3s; }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a:hover { color: #00ff88; }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .hamburger span { width: 30px; height: 3px; background: #fff; border-radius: 2px; transition: 0.3s; }
-        /* Floating Instagram */
-        .insta-fab { position: fixed; bottom: 25px; right: 25px; width: 70px; height: 70px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 10px 30px rgba(244,148,51,0.5); transition: all 0.4s; z-index: 100; text-decoration: none; border: 3px solid rgba(255,255,255,0.3); }
-        .insta-fab:hover { transform: scale(1.1) rotate(360deg); box-shadow: 0 20px 50px rgba(244,148,51,0.7); }
-        /* Sections */
-        section { padding: clamp(140px, 28vh, 170px) 0 clamp(110px, 22vh, 140px); display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        h1 { font-size: clamp(3.5rem, 12vw, 8rem); font-weight: 900; background: linear-gradient(45deg, #00ff88, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; margin-bottom: 1.5rem; }
-        h2 { font-size: clamp(2.5rem, 8vw, 4.5rem); text-align: center; margin-bottom: 3rem; opacity: 0.95; }
-        p { font-size: clamp(1.1rem, 3.5vw, 1.4rem); text-align: center; max-width: 700px; margin-bottom: 2.5rem; opacity: 0.9; }
-        .profile-img { width: clamp(160px, 35vw, 200px); height: clamp(160px, 35vw, 200px); border-radius: 50%; background: linear-gradient(135deg, #00ff88, #ff00ff); display: flex; align-items: center; justify-content: center; font-size: clamp(3rem, 10vw, 4.5rem); font-weight: 900; box-shadow: 0 25px 70px rgba(0,255,136,0.6); animation: pulseFloat 4s ease-in-out infinite; margin: 2rem auto; }
-        @keyframes pulseFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .btn { padding: clamp(16px, 4.5vw, 20px) clamp(40px, 10vw, 60px); background: linear-gradient(135deg, #00ff88, #00cc66); color: #000; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: clamp(1.1rem, 3vw, 1.3rem); transition: all 0.4s; box-shadow: 0 15px 40px rgba(0,255,136,0.4); display: inline-flex; align-items: center; gap: 1rem; margin: 0 1rem 1rem 0; }
-        .btn:hover { transform: translateY(-8px); box-shadow: 0 25px 60px rgba(0,255,136,0.6); }
-        .whatsapp-btn { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff !important; box-shadow: 0 15px 40px rgba(37,211,102,0.5); }
-        .insta-btn { background: linear-gradient(45deg, #f09433, #e6683c); color: #fff !important; box-shadow: 0 15px 40px rgba(244,148,51,0.5); }
-        /* Portfolio */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 28vw, 350px), 1fr)); gap: 2.5rem; width: 100%; }
-        .portfolio-item { position: relative; border-radius: 25px; height: clamp(340px, 45vh, 400px); cursor: pointer; transition: all 0.5s cubic-bezier(0.25,0.46,0.45,0.94); overflow: hidden; }
-        .portfolio-item:hover { transform: translateY(-20px) scale(1.02); box-shadow: 0 40px 100px rgba(0,0,0,0.6); }
-        .portfolio-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; color: #fff; z-index: 2; }
-        .sale-badge { position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #ff4444, #ff6666); padding: 1rem 1.5rem; border-radius: 30px; font-weight: 800; box-shadow: 0 10px 30px rgba(255,68,68,0.5); }
-        /* Pricing Section */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 4rem 0; width: 100%; }
-        .price-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); padding: 2.5rem; border-radius: 25px; text-align: center; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s; }
-        .price-card:hover { transform: translateY(-15px); background: rgba(255,255,255,0.15); }
-        .price { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; background: linear-gradient(45deg, #00ff88, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .old-price { font-size: 1.2rem; text-decoration: line-through; opacity: 0.6; color: #ff4444; }
-        /* Responsive */
-        @media (max-width: 768px) { .hamburger { display: flex; } .nav-links { position: fixed; left: -100%; top: 70px; flex-direction: column; background: rgba(10,10,10,0.98); width: 100%; padding: 3rem 0; text-align: center; transition: left 0.4s; z-index: 998; backdrop-filter: blur(20px); } .nav-links.active { left: 0; } .portfolio-grid { grid-template-columns: 1fr; } .btn { display: block; margin: 1rem auto; } }
-        @media (max-width: 480px) { section { padding: clamp(120px, 25vh, 150px) 0 clamp(90px, 20vh, 120px); } }
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent: #ff007a;
+            --bg-dark: #020205;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-dark);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 3D Particle Canvas Background */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+        }
+        .preloader.hidden { opacity: 0; visibility: hidden; transform: scale(1.1); }
+        .loader-text { 
+            font-size: 2rem; font-weight: 900; 
+            letter-spacing: 10px; color: var(--primary);
+            text-shadow: 0 0 20px var(--primary);
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        /* Fixed Sale Banner */
+        .sale-banner {
+            position: fixed;
+            top: 0; width: 100%;
+            background: linear-gradient(90deg, #ff0055, #ff00aa);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            z-index: 2000;
+            font-weight: 800;
+            text-transform: uppercase;
+            box-shadow: 0 5px 20px rgba(255,0,85,0.4);
+        }
+        .countdown-timer span {
+            background: rgba(0,0,0,0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin: 0 4px;
+            font-family: monospace;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 45px; width: 100%;
+            z-index: 1000;
+            transition: 0.4s;
+        }
+        header.scrolled { top: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; opacity: 0.7; transition: 0.3s; }
+        .nav-links a:hover { opacity: 1; color: var(--primary); }
+
+        /* Hero Section */
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            padding-top: 100px;
+        }
+        .hero-content h1 { 
+            font-size: clamp(3rem, 10vw, 6.5rem); 
+            line-height: 0.9; margin-bottom: 24px;
+            background: linear-gradient(to bottom, #fff 40%, var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-content p { font-size: 1.2rem; opacity: 0.6; max-width: 600px; margin: 0 auto 40px; }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 16px 40px; border-radius: 100px;
+            text-decoration: none; font-weight: 700;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .btn-primary { background: var(--primary); color: #000; box-shadow: 0 10px 30px rgba(0,242,254,0.3); }
+        .btn-whatsapp { background: #25D366; color: #fff; }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+
+        /* Portfolio Cards */
+        .section-title { font-size: 3rem; text-align: center; margin-bottom: 60px; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 10px;
+            backdrop-filter: blur(10px);
+            transition: 0.5s;
+            position: relative;
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(255,255,255,0.06); }
+        
+        .card-img {
+            height: 240px; width: 100%; border-radius: 24px;
+            background: linear-gradient(45deg, #121212, #252525);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem; margin-bottom: 20px;
+        }
+        .card-body { padding: 10px 20px 20px; }
+        .card-price { 
+            display: flex; align-items: baseline; gap: 10px; margin-bottom: 15px; 
+            color: var(--primary); font-size: 1.8rem; font-weight: 800;
+        }
+        .card-price del { font-size: 1rem; color: rgba(255,255,255,0.3); }
+
+        .tag {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--accent); padding: 5px 15px;
+            border-radius: 100px; font-size: 0.7rem; font-weight: 900;
+        }
+
+        /* Contact/Buy Section */
+        .contact-box {
+            background: linear-gradient(135deg, var(--glass), rgba(0,242,254,0.05));
+            border-radius: 40px; padding: 60px;
+            text-align: center; margin-top: 100px;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* Floating IG Icon */
+        .ig-float {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 60px; height: 60px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-radius: 20px; display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.4);
+            z-index: 1000; transition: 0.3s;
+        }
+        .ig-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        /* Animations */
+        @keyframes pulse { to { opacity: 0.5; } }
+        [data-aos] { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        [data-aos].visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 3.5rem; }
+            .contact-box { padding: 30px; }
+        }
     </style>
 </head>
 <body>
-    <!-- Start Animation Preloader -->
+
+    <canvas id="bg-canvas"></canvas>
+
     <div class="preloader" id="preloader">
-        <div class="logo-spin">ARYAN CODES</div>
-        <div class="load-bar"><div class="load-progress"></div></div>
+        <div class="loader-text">ARYAN</div>
     </div>
 
-    <!-- Sale Banner -->
-    <div class="sale-live" id="saleBanner">
-        <h3>🔥 FLASH SALE LIVE! Premium Templates 75% OFF</h3>
-        <div class="countdown" id="countdown"></div>
+    <div class="sale-banner">
+        🔥 Anniversary LIVE SALE is ON! Ends in: 
+        <span class="countdown-timer" id="countdown"></span>
     </div>
 
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">ARYAN CODES</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </nav>
+    <header id="main-header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">ARYAN<span>CODES</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Templates</a></li>
+                    <li><a href="#contact">Orders</a></li>
+                </ul>
+                <a href="https://wa.me/917772075898" class="btn btn-primary" style="padding: 10px 25px;">DM Me</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Floating Instagram -->
-    <a href="https://instagram.com/aaruu_codes" class="insta-fab" target="_blank" title="DM @aaruu_codes for Orders">📸</a>
-
-    <!-- Hero -->
-    <section id="home">
-        <div class="container">
-            <h1>Professional Web Templates</h1>
-            <div class="profile-img">AC</div>
-            <p>Responsive, Animated, Customizable HTML templates for all occasions. Flash sale - limited time!</p>
-            <a href="#portfolio" class="btn">View Portfolio</a>
-            <a href="https://wa.me/917772075898?text=Hi! Interested in templates - send prices & demos" class="btn whatsapp-btn">Order WhatsApp</a>
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 data-aos>Digital <br>Craftsmanship.</h1>
+            <p data-aos>Handcrafted premium responsive templates for life's biggest moments. Anniversary, Proposals, and Professional Portfolios.</p>
+            <div class="btn-group" data-aos>
+                <a href="#portfolio" class="btn btn-primary">View Designs</a>
+                <a href="https://wa.me/917772075898" class="btn btn-whatsapp">Order on WhatsApp</a>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio">
-        <div class="container">
-            <h2>Premium Portfolio Showcase</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" style="background: linear-gradient(45deg, #ff9a9e, #fecfef);" onclick="window.open('aryan-codes-website/templates/anniversary.html','_blank')">
-                    <div class="sale-badge">₹199 <span class="old-price">₹999</span></div>
-                    <div class="portfolio-overlay">
-                        <h3>💕 Anniversary</h3>
-                        <p>Romantic animations & timeline</p>
-                    </div>
+    <section class="container" id="portfolio" style="padding: 100px 0;">
+        <h2 class="section-title" data-aos>Luxury Collection</h2>
+        <div class="portfolio-grid">
+            <div class="card" data-aos>
+                <div class="tag">TOP SELLER</div>
+                <div class="card-img">💖</div>
+                <div class="card-body">
+                    <div class="card-price">₹149 <del>₹799</del></div>
+                    <h3>Anniversary Premium</h3>
+                    <p>Timeline, Music Sync, Photo Gallery.</p>
                 </div>
-                <div class="portfolio-item" style="background: linear-gradient(45deg, #a8edea, #fed6e3);" onclick="window.open('aryan-codes-website/templates/birthday-festival.html','_blank')">
-                    <div class="sale-badge">₹299 <span class="old-price">₹1499</span></div>
-                    <div class="portfolio-overlay">
-                        <h3>🎂 Birthday/Festival</h3>
-                        <p>Fireworks, wishes, music</p>
-                    </div>
+            </div>
+            <div class="card" data-aos>
+                <div class="card-img">💍</div>
+                <div class="card-body">
+                    <div class="card-price">₹249 <del>₹1499</del></div>
+                    <h3>Proposal Interactive</h3>
+                    <p>Interactive "Yes" button & animations.</p>
                 </div>
-                <div class="portfolio-item" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);" onclick="window.open('aryan-codes-website/templates/love-proposal.html','_blank')">
-                    <div class="sale-badge">₹399 <span class="old-price">₹1999</span></div>
-                    <div class="portfolio-overlay">
-                        <h3>💍 Proposal</h3>
-                        <p>Interactive heartbeat effects</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" style="background: linear-gradient(45deg, #667eea, #764ba2);" onclick="window.open('aryan-codes-website/templates/hotel.html','_blank')">
-                    <div class="sale-badge">₹999 <span class="old-price">₹4999</span></div>
-                    <div class="portfolio-overlay">
-                        <h3>🏨 Hotel Booking</h3>
-                        <p>Professional responsive site</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" style="background: linear-gradient(45deg, #f093fb, #f5576c);" onclick="window.open('aryan-codes-website/templates/ecommerce.html','_blank')">
-                    <div class="sale-badge">₹1499 <span class="old-price">₹7999</span></div>
-                    <div class="portfolio-overlay">
-                        <h3>🛍️ E-Commerce</h3>
-                        <p>Shop catalog & cart</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" style="background: linear-gradient(45deg, #4facfe, #00f2fe);" onclick="window.open('aryan-codes-website/templates/portfolio.html','_blank')">
-                    <div class="sale-badge">₹2499 <span class="old-price">₹9999</span></div>
-                    <div class="portfolio-overlay">
-                        <h3>💼 Business Portfolio</h3>
-                        <p>Corporate professional site</p>
-                    </div>
+            </div>
+            <div class="card" data-aos>
+                <div class="card-img">🏨</div>
+                <div class="card-body">
+                    <div class="card-price">₹999 <del>₹5000</del></div>
+                    <h3>Hotel/Shop Business</h3>
+                    <p>Professional SEO-friendly architecture.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section id="pricing">
-        <div class="container">
-            <h2>Transparent Pricing - DM Instagram for Quote</h2>
-            <p>Click prices for instant Instagram DM with your requirements. Custom quotes in 5 mins!</p>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <div class="price">₹199<span class="old-price">₹999</span></div>
-                    <h3>Basic Template</h3>
-                    <p>Anniversary/Birthday single page</p>
-                    <a href="https://instagram.com/aaruu_codes?text=Hi! Quote for Basic Template ₹199" class="btn insta-btn" target="_blank">Get Quote</a>
-                </div>
-                <div class="price-card">
-                    <div class="price">₹999<span class="old-price">₹4999</span></div>
-                    <h3>Professional Site</h3>
-                    <p>Hotel/Restaurant multi-page</p>
-                    <a href="https://instagram.com/aaruu_codes?text=Hi! Quote for Professional Site ₹999" class="btn insta-btn" target="_blank">Get Quote</a>
-                </div>
-                <div class="price-card">
-                    <div class="price">₹4999<span class="old-price">₹19999</span></div>
-                    <h3>Custom E-Commerce</h3>
-                    <p>Full shop with payment integration</p>
-                    <a href="https://instagram.com/aaruu_codes?text=Hi! Quote for Custom E-Commerce ₹4999" class="btn insta-btn" target="_blank">Get Quote</a>
-                </div>
-            </div>
+    <section class="container" id="contact" style="padding-bottom: 100px;">
+        <div class="contact-box" data-aos>
+            <h2>Ready to start your project?</h2>
+            <p style="margin-bottom: 30px;">Get your website delivered within 24 hours.</p>
+            <a href="https://wa.me/917772075898" class="btn btn-primary" style="margin: 0 auto;">Start Chat Now</a>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <div class="container">
-            <h2>Ready to Order?</h2>
-            <p>Instant delivery | Full support | 100% responsive</p>
-            <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 3rem;">
-                <a href="https://wa.me/917772075898?text=Hi Aryan! Need website quote" class="btn whatsapp-btn">WhatsApp Order</a>
-                <a href="https://instagram.com/aaruu_codes" class="btn insta-btn" target="_blank">Instagram DM</a>
-            </div>
-        </div>
-    </section>
+    <a href="https://instagram.com/aaruu_codes" class="ig-float" target="_blank">
+        <svg style="width:30px;height:30px" viewBox="0 0 24 24"><path fill="#fff" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M18,7A1,1 0 0,1 17,6A1,1 0 0,1 18,5A1,1 0 0,1 19,6A1,1 0 0,1 18,7Z" /></svg>
+    </a>
+
+    <footer style="text-align: center; padding: 40px; opacity: 0.4; font-size: 0.8rem;">
+        &copy; 2026 ARYAN CODES | DESIGNED FOR THE FUTURE
+    </footer>
 
     <script>
-        // Preloader
+        // 1. Particle Background Logic
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#4facfe';
+            ctx.strokeStyle = 'rgba(79, 172, 254, 0.1)';
+            particles.forEach((p, i) => {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 150) {
+                        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(draw);
+        }
+        init(); draw();
+        window.addEventListener('resize', init);
+
+        // 2. Preloader & AOS
         window.addEventListener('load', () => {
-            setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 2500);
+            const preloader = document.getElementById('preloader');
+            preloader.classList.add('hidden');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
         });
 
-        // Countdown (10 days)
-        let endTime = new Date(Date.now() + 10*24*60*60*1000).getTime();
-        setInterval(() => {
-            let now = Date.now(), dist = endTime - now;
-            if (dist > 0) {
-                let d = Math.floor(dist/86400000), h = Math.floor((dist%86400000)/3600000), m = Math.floor((dist%3600000)/60000), s = Math.floor((dist%60000)/1000);
-                document.getElementById('countdown').innerHTML = `<span>${d}d</span><span>${h}h</span><span>${m}m</span><span>${s}s</span>`;
-            } else {
-                document.getElementById('saleBanner').innerHTML = '<h3>Sale Ended!</h3>';
-            }
-        }, 1000);
+        // 3. Countdown Timer
+        const saleEnd = Date.now() + (10 * 24 * 60 * 60 * 1000); 
+        function updateTimer() {
+            const diff = saleEnd - Date.now();
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('countdown').innerHTML = `<span>${d}d</span>:<span>${h}h</span>:<span>${m}m</span>:<span>${s}s</span>`;
+        }
+        setInterval(updateTimer, 1000); updateTimer();
 
-        // Mobile menu
-        document.getElementById('hamburger').onclick = () => document.querySelector('.nav-links').classList.toggle('active');
-        document.querySelectorAll('a[href^="#"]').forEach(a => a.onclick = e => { e.preventDefault(); document.querySelector(a.href).scrollIntoView({behavior:'smooth'}); });
-
-        // Smooth hover effects
-        document.querySelectorAll('.portfolio-item, .price-card').forEach(el => {
-            el.onmouseenter = () => el.style.transform = 'translateY(-15px) scale(1.02)';
-            el.onmouseleave = () => el.style.transform = 'translateY(0) scale(1)';
+        // 4. Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
     </script>
 </body>
